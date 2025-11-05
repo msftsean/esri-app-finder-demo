@@ -1,5 +1,15 @@
 # ESRI App Finder & Builder Assistant
 
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/msftsean/esri-app-finder-demo)
+[![Build Status](https://img.shields.io/badge/build-passing-brightgreen.svg)](https://github.com/msftsean/esri-app-finder-demo/actions)
+[![License](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
+[![React](https://img.shields.io/badge/React-19.1.1-61dafb.svg)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9.3-3178c6.svg)](https://www.typescriptlang.org/)
+[![Azure Functions](https://img.shields.io/badge/Azure%20Functions-v4-0062AD.svg)](https://azure.microsoft.com/en-us/services/functions/)
+[![ArcGIS](https://img.shields.io/badge/ArcGIS%20SDK-4.31-007ac2.svg)](https://developers.arcgis.com/)
+
+**Version 1.0.0** | [Changelog](./CHANGELOG.md) | [Roadmap](./docs/spec-kit/ROADMAP.md)
+
 A conversational AI chat tool that guides non-technical business users and policy makers to discover the right ESRI configurable application, create web maps, and search Living Atlas content.
 
 ## 🚀 Quick Start
@@ -49,8 +59,10 @@ cd backend
 npm run dev
 ```
 
-Frontend: http://localhost:5173  
-Backend: http://localhost:3000
+Frontend: http://localhost:5175  
+Backend: http://localhost:7071
+
+> **Note:** Frontend runs on port 5175 (not 5173) due to port conflicts. Backend Azure Functions use default port 7071.
 
 ## 📁 Project Structure
 
@@ -87,20 +99,19 @@ Backend: http://localhost:3000
 ### Technology Stack
 
 #### Frontend
-- **React 18** - UI framework
-- **TypeScript** - Type safety
-- **Vite** - Build tool
-- **Tailwind CSS** - Styling
-- **ArcGIS Maps SDK** - Map rendering
-- **React Query** - Server state management
-- **Zustand** - Client state management
+- **React 19.1.1** - UI framework (latest edge release)
+- **TypeScript 5.9.3** - Type safety
+- **Vite 7.1.7** - Build tool
+- **Tailwind CSS 3.4.18** - Styling
+- **ArcGIS Maps SDK 4.31** - Map rendering
+- **Zustand 5.0.8** - State management
 
 #### Backend
-- **Azure Functions** - Serverless compute
+- **Azure Functions v4** - Serverless compute
 - **Node.js 20** - Runtime
-- **TypeScript** - Type safety
-- **Azure OpenAI** - AI/Chat (GPT-4)
-- **ArcGIS REST API** - ESRI integration
+- **TypeScript 5.9.3** - Type safety
+- **Azure OpenAI** - AI/Chat (GPT-4) *[mocked in v1.0]*
+- **ArcGIS REST API** - ESRI integration *[mocked in v1.0]*
 
 #### Infrastructure
 - **Azure Static Web Apps** - Frontend hosting
@@ -110,8 +121,21 @@ Backend: http://localhost:3000
 
 ## 📚 Documentation
 
-Comprehensive documentation is available in the `/docs/spec-kit/` directory:
+Comprehensive documentation is available in the `.specify/` and `/docs/spec-kit/` directories:
 
+### Specifications
+- [API Specification](./.specify/specs/api-specification.md) - Complete REST API contract
+- [Frontend Components](./.specify/specs/frontend-components.md) - React architecture
+- [Error Handling](./.specify/specs/error-handling.md) - Graceful degradation patterns
+
+### Analysis
+- [Codebase Analysis](./.specify/analysis/codebase-analysis.md) - Implementation status (75% complete)
+- [Specification Plan](./.specify/analysis/specification-plan.md) - Development roadmap
+
+### Constitutional Framework
+- [Constitution](./.specify/memory/constitution.md) - 9 articles guiding development
+
+### GitHub Spec Kit
 - [Product Requirements](./docs/spec-kit/product-requirements.md)
 - [Technical Specification](./docs/spec-kit/technical-specification.md)
 - [API Contracts](./docs/spec-kit/api-contracts.md)
@@ -121,14 +145,23 @@ Comprehensive documentation is available in the `/docs/spec-kit/` directory:
 
 ## 🔑 Key Features
 
-### v1.0 (Current)
+### v1.0.0 (Current - November 2025)
 - ✅ Conversational AI chat interface
 - ✅ App recommendation engine (12 ESRI apps)
-- ✅ Web map creation tool
+- ✅ Interactive ESRI map with dynamic layers
 - ✅ Living Atlas dataset search
-- ✅ App preview & launch
+- ✅ App preview & configuration
+- ✅ Real-time streaming chat responses
+- ✅ Responsive design (desktop & mobile)
 
-### Future Versions
+### v1.1.0 (Planned - Q1 2026)
+- 🔲 Error handling & graceful degradation
+- 🔲 Accessibility (WCAG 2.1 AA)
+- 🔲 Testing coverage (80%+)
+- 🔲 Azure OpenAI integration (production)
+- 🔲 ESRI Living Atlas API (production)
+
+### v2.0.0 (Future)
 - 🔲 User accounts (ArcGIS Online SSO)
 - 🔲 Save/export configurations
 - 🔲 Collaboration features
@@ -194,7 +227,7 @@ See [Deployment Guide](./docs/spec-kit/deployment-guide.md) for detailed instruc
 
 ## 📄 License
 
-[License TBD]
+MIT License - See [LICENSE](LICENSE) file for details
 
 ## 🆘 Support
 
@@ -202,6 +235,22 @@ For issues and questions:
 - Review documentation in `/docs/spec-kit/`
 - Check [API Contracts](./docs/spec-kit/api-contracts.md)
 - Review [Technical Specification](./docs/spec-kit/technical-specification.md)
+
+## 🎯 Project Status
+
+| Category | Status | Coverage |
+|----------|--------|----------|
+| **Implementation** | 🟡 In Progress | 75% complete |
+| **Constitutional Compliance** | 🔴 3 violations | 6/9 articles passing |
+| **Specifications** | 🟢 Phase 1 Complete | 3/10 specs delivered |
+| **Testing** | 🔴 Minimal | <20% coverage |
+| **Documentation** | 🟢 Comprehensive | API, Frontend, Error specs |
+| **Deployment** | 🔴 Not Started | Local dev only |
+
+### Critical Priorities
+1. ⚠️ **Error Handling** - Implement graceful degradation (Article VII)
+2. ⚠️ **Accessibility** - WCAG 2.1 AA compliance (Article VIII)
+3. ⚠️ **Testing** - Achieve 80% coverage (Article IX)
 
 ## 🎯 Success Metrics
 
@@ -211,4 +260,4 @@ For issues and questions:
 
 ---
 
-Built with ❤️ for non-technical users who need powerful geospatial apps
+**Version 1.0.0** | Built with ❤️ for non-technical users who need powerful geospatial apps | [GitHub Repository](https://github.com/msftsean/esri-app-finder-demo)
